@@ -39,7 +39,7 @@ header{position:sticky;top:33px;z-index:50;margin-top:33px;background:rgba(246,2
 nav{display:flex;gap:26px;margin-left:auto;font-size:14.5px;font-weight:500;color:var(--ink2)}
 nav a:hover{color:var(--neva)}
 .phone{font-weight:700;font-size:14.5px;color:var(--neva2);white-space:nowrap}
-.burger{display:none;margin-left:auto;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:var(--card);align-items:center;justify-content:center;cursor:pointer}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:var(--card);align-items:center;justify-content:center;cursor:pointer}
 
 /* hero */
 .hero{padding:56px 0 80px}
@@ -183,12 +183,62 @@ footer{padding:50px 0 40px;border-top:1px solid var(--line);margin-top:20px;font
 footer .row{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
 footer .soc{display:flex;gap:16px;font-weight:600;color:var(--ink2)}
 
+/* поиск + меню */
+.icon-btn{width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:var(--card);display:grid;place-items:center;cursor:pointer;flex:none}
+.sheet{position:fixed;inset:0;z-index:80;background:rgba(14,26,44,.45);display:none}
+.sheet.open{display:block}
+.sheet .panel{background:var(--paper);max-width:1200px;margin:48px auto 0;border-radius:var(--r);padding:28px;max-height:calc(100vh - 80px);overflow:auto;box-shadow:0 30px 80px -20px rgba(0,0,0,.4)}
+.sbox{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:6px 8px 6px 18px}
+.sbox input{flex:1;font:500 18px Manrope;border:0;background:none;outline:none;color:var(--ink);padding:10px 0;min-width:0}
+.sbox button{border:0;background:var(--paper2);border-radius:10px;width:40px;height:40px;cursor:pointer;font-size:18px}
+.sres{margin-top:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.sres a{display:flex;justify-content:space-between;gap:10px;padding:12px 16px;border-radius:12px;background:var(--card);border:1px solid var(--line);font-weight:600;font-size:15px}
+.sres a:hover{border-color:var(--neva)}
+.sres a em{font:500 12px Manrope;color:var(--muted);font-style:normal;white-space:nowrap}
+.sres .none{color:var(--muted);font-size:14px;padding:6px 2px}
+.mega{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:28px}
+.mega h4{font:700 12px Manrope;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.mega a{display:block;padding:6px 0;font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600}
+.mega a:hover{color:var(--neva)}
+
+/* подбор по потребности */
+.finder{padding:0 0 30px}
+.fbox{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:34px}
+.fbox h2{font-size:clamp(32px,4vw,48px)}
+.needs{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 24px}
+.needs button{display:flex;align-items:center;gap:8px;font:600 14.5px Manrope;padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;transition:.2s}
+.needs button:hover{border-color:var(--ink)}
+.needs button.on{background:var(--neva);border-color:var(--neva);color:#fff}
+.fres{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.fres a{padding:16px 18px;border-radius:16px;background:var(--paper);border:1px solid transparent;display:flex;flex-direction:column;gap:4px;transition:.2s}
+.fres a:hover{border-color:var(--neva)}
+.fres b{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.15}
+.fres em{font:600 11.5px Manrope;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-style:normal}
+
+/* семейство брендов */
+.brands{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:56px}
+.brand-t{border-radius:20px;padding:24px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s}
+.brand-t:hover{transform:translateY(-3px)}
+.brand-t b{font-family:"Cormorant Garamond",serif;font-size:34px;line-height:1}
+.brand-t span{font-size:13.5px;opacity:.8}
+
+/* подвал */
+.foot{display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.foot h4{font:700 12px Manrope;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:12px}
+.foot a{display:block;padding:4px 0;color:var(--ink2)}
+.foot a:hover{color:var(--neva)}
+.sub{display:flex;gap:8px;margin-top:14px}
+.sub input{flex:1;min-width:0;font:15px Manrope;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);outline:none}
+.sub button{font:700 14px Manrope;padding:12px 16px;border-radius:12px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+.subok{display:none;font-size:13px;color:var(--neva);margin-top:8px}
+
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
 .reveal.in{opacity:1;transform:none}
 
 @media (max-width:980px){
   nav,.phone{display:none}
   .burger{display:flex}
+  #sbtn{margin-left:auto}
   .hero .grid,.lgrid,.newgrid,.buyrow{grid-template-columns:1fr}
   .heroimg{max-width:520px}
   .newcard{left:16px}
@@ -199,6 +249,10 @@ footer .soc{display:flex;gap:16px;font-weight:600;color:var(--ink2)}
   .pop,.jgrid{grid-template-columns:1fr 1fr}
   .tips{grid-column:span 2}
   .lgrid{gap:10px}
+  .fres{grid-template-columns:repeat(2,1fr)}
+  .brands{grid-template-columns:repeat(2,1fr)}
+  .foot{grid-template-columns:1fr 1fr}
+  .mega{grid-template-columns:1fr 1fr}
 }
 @media (max-width:620px){
   .wrap{padding:0 16px}
@@ -228,6 +282,16 @@ footer .soc{display:flex;gap:16px;font-weight:600;color:var(--ink2)}
   .history::after{background:linear-gradient(180deg,rgba(14,26,44,.55),rgba(14,26,44,.9))}
   .years{gap:22px}
   .shops,.ask{padding:28px}
+  .fbox{padding:22px;border-radius:22px}
+  .needs button{padding:9px 14px;font-size:13.5px}
+  .fres{grid-template-columns:1fr 1fr;gap:8px}
+  .fres b{font-size:18px}
+  .sres{grid-template-columns:1fr}
+  .sheet .panel{margin:0;border-radius:0;min-height:100vh;max-height:100vh;padding:20px 16px}
+  .mega{grid-template-columns:1fr;gap:18px}
+  .brand-t{min-height:130px;padding:18px}
+  .brand-t b{font-size:27px}
+  .foot{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -245,9 +309,22 @@ footer .soc{display:flex;gap:16px;font-weight:600;color:var(--ink2)}
       <a href="#catalog">Каталог</a><a href="#lines">Линейки</a><a href="#new">Новинки</a><a href="#history">О компании</a><a href="#buy">Где купить</a>
     </nav>
     <a class="phone" href="tel:88002002040">8 800 200-20-40</a>
-    <button class="burger" aria-label="Меню"><svg width="18" height="12" viewBox="0 0 18 12"><path d="M0 1h18M0 6h18M0 11h18" stroke="#14233a" stroke-width="1.6"/></svg></button>
+    <button class="icon-btn" id="sbtn" aria-label="Поиск"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14233a" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+    <button class="burger" id="mbtn" aria-label="Меню"><svg width="18" height="12" viewBox="0 0 18 12"><path d="M0 1h18M0 6h18M0 11h18" stroke="#14233a" stroke-width="1.6"/></svg></button>
   </div>
 </header>
+
+<div class="sheet" id="sheet">
+  <div class="panel">
+    <div class="sbox"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a8478" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" placeholder="Мыло, крем, «Ушастый нянь»…" autocomplete="off"><button id="sclose" aria-label="Закрыть">✕</button></div>
+    <div class="sres" id="sres"></div>
+    <div class="mega">
+      <div><h4>По потребности</h4><a href="#finder" data-need="baby">Для малыша</a><a href="#finder" data-need="face">Для лица</a><a href="#finder" data-need="body">Для рук и тела</a><a href="#finder" data-need="hair">Для волос</a><a href="#finder" data-need="teeth">Для зубов</a></div>
+      <div><h4>Для дома</h4><a href="#finder" data-need="laundry">Стирка</a><a href="#finder" data-need="home">Посуда и уборка</a><h4 style="margin-top:22px">Компания</h4><a href="#history">О компании</a><a href="#journal">Новости и советы</a><a href="#buy">Где купить</a></div>
+      <div><h4>Бренды</h4><a href="#lines">Ушастый нянь</a><a href="#lines">Сарма</a><a href="#lines">Тип-Топ</a><a href="#lines">Солнышко</a><a href="#lines">Все линейки →</a></div>
+    </div>
+  </div>
+</div>
 
 <section class="hero">
   <div class="wrap grid">
@@ -277,7 +354,26 @@ footer .soc{display:flex;gap:16px;font-weight:600;color:var(--ink2)}
   </div>
 </section>
 
-<section id="catalog" style="padding-top:20px">
+<section id="finder" class="finder">
+  <div class="wrap">
+    <div class="fbox reveal">
+      <div class="eyebrow">Подбор</div>
+      <h2>Что вам нужно?</h2>
+      <div class="needs" id="needs">
+        <button data-need="baby" class="on">Для малыша</button>
+        <button data-need="face">Для лица</button>
+        <button data-need="body">Для рук и тела</button>
+        <button data-need="hair">Для волос</button>
+        <button data-need="teeth">Для зубов</button>
+        <button data-need="laundry">Стирка</button>
+        <button data-need="home">Посуда и уборка</button>
+      </div>
+      <div class="fres" id="fres"></div>
+    </div>
+  </div>
+</section>
+
+<section id="catalog" style="padding-top:60px">
   <div class="wrap">
     <div class="head reveal">
       <div><div class="eyebrow">Каталог</div><h2>Для всей семьи и дома</h2></div>
@@ -299,10 +395,19 @@ footer .soc{display:flex;gap:16px;font-weight:600;color:var(--ink2)}
 </section>
 
 <section id="lines" class="lines">
+  <div class="wrap">
+    <div class="head reveal"><div><div class="eyebrow">Семейство брендов</div><h2>Бренды, которые знают по имени</h2></div></div>
+    <div class="brands">
+      <a class="brand-t reveal" href="#" style="background:#ffd93b;color:#14233a"><b>Ушастый нянь</b><span>Мыло, гели и порошки для детей</span></a>
+      <a class="brand-t reveal" href="#" style="background:#2c6fb5;color:#fff"><b>Сарма</b><span>Средства для посуды, стирки и дома</span></a>
+      <a class="brand-t reveal" href="#" style="background:#14233a;color:#e9d3a6"><b>INDEX</b><span>Линейка ухода</span></a>
+      <a class="brand-t reveal" href="#" style="background:#efe7d8;color:#163a66"><b><i>Невская косметика</i></b><span>Мыло и кремы с 1839 года</span></a>
+    </div>
+  </div>
   <div class="wrap lgrid">
     <div class="reveal">
       <div class="eyebrow">Линейки</div>
-      <h2>Бренды, которые знают по имени</h2>
+      <h2>Все линейки</h2>
       <div class="filters">
         <button class="on" data-f="all">Все</button>
         <button data-f="face">Лицо и тело</button>
@@ -431,7 +536,7 @@ footer .soc{display:flex;gap:16px;font-weight:600;color:var(--ink2)}
   </div></div>
 </section>
 
-<section>
+<section id="journal">
   <div class="wrap">
     <div class="head reveal">
       <div><div class="eyebrow">Журнал</div><h2>Новости и советы</h2></div>
@@ -495,6 +600,17 @@ footer .soc{display:flex;gap:16px;font-weight:600;color:var(--ink2)}
 </section>
 
 <footer>
+  <div class="wrap foot">
+    <div>
+      <h4>Новости и новинки</h4>
+      <p style="color:var(--ink2);font-size:14px">Раз в месяц — новинки, советы по уходу и акции.</p>
+      <form class="sub" id="subf"><input type="email" placeholder="E-mail" autocomplete="off" required><button>Подписаться</button></form>
+      <div class="subok" id="subok">Демо: подписка не оформлена.</div>
+    </div>
+    <div><h4>Каталог</h4><a href="#finder">Для малыша</a><a href="#finder">Для лица и тела</a><a href="#finder">Для волос</a><a href="#finder">Для дома</a><a href="#new">Новинки</a></div>
+    <div><h4>Компания</h4><a href="#history">О компании</a><a href="#journal">Новости</a><a href="#journal">Полезные советы</a><a href="#buy">Где купить</a></div>
+    <div><h4>Покупателям</h4><a href="tel:88002002040">8 800 200-20-40</a><a href="mailto:client@nevcos.ru">client@nevcos.ru</a><a href="#buy">Задать вопрос</a><a href="#">Политика конфиденциальности</a></div>
+  </div>
   <div class="wrap row">
     <div>© АО «Невская Косметика» — товарные знаки и тексты.<br>Неофициальный концепт редизайна сайта · фото: Unsplash</div>
     <div class="soc"><a href="#">VK</a><a href="#">Rutube</a><a href="#">Ozon</a><a href="#">WB</a><a href="#">En</a></div>
@@ -509,6 +625,41 @@ document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
   const f=b.dataset.f;
   document.querySelectorAll('.llist a').forEach(a=>a.classList.toggle('hide',f!=='all'&&a.dataset.g!==f));
 });
+const D=[
+ ['Косметика для малышей','Категория',['baby']],['Ушастый нянь','Бренд',['baby','laundry']],['Солнышко','Линейка',['baby']],['Детская серия','Линейка',['baby']],
+ ['Гель для мытья детской посуды «Ушастый нянь»','Продукт',['baby','home']],['Жидкое крем-мыло «Ушастый нянь» с алоэ вера','Продукт',['baby','body']],
+ ['Стиральный порошок «Ушастый нянь Яркость цвета»','Новинка',['baby','laundry']],
+ ['Крем для лица «Витаминный комплекс»','Новинка',['face']],['Гиалурон для лица','Линейка',['face']],['INDEX','Линейка',['face']],['Традиционные кремы','Линейка',['face','body']],['Уход за кожей','Категория',['face','body']],
+ ['Жидкое мыло «Бархатное»','Новинка',['body']],['Мыло жидкое','Категория',['body']],['Мыло твёрдое','Категория',['body']],['Время для себя любимой','Линейка',['body']],['Дивный сад','Линейка',['body']],['Цветы любви','Линейка',['body']],['Натуральное','Линейка',['body']],['Пантенол','Линейка',['body','hair']],
+ ['Уход за волосами','Категория',['hair']],['Кератин','Линейка',['hair']],
+ ['Уход за полостью рта','Категория',['teeth']],['Что означают полоски на тюбиках','Совет',['teeth']],['Выбирайте пасту по зубам','Совет',['teeth']],
+ ['Средства для стирки и ухода за тканями','Категория',['laundry']],['Хозяйственное мыло 72%','Линейка',['laundry','home']],
+ ['Средства для ухода за домом','Категория',['home']],['Сарма','Бренд',['home','laundry']],['Гель для мытья посуды «Сарма»','Продукт',['home']],['Тип-Топ','Линейка',['home']],['Яркая уборка','Линейка',['home']],
+ ['Профессиональные серии','Категория',[]]
+];
+const fres=document.getElementById('fres');
+function need(n){
+  document.querySelectorAll('#needs button').forEach(b=>b.classList.toggle('on',b.dataset.need===n));
+  fres.innerHTML=D.filter(d=>d[2].includes(n)).map(d=>`<a href="#"><em>${d[1]}</em><b>${d[0]}</b></a>`).join('');
+}
+document.querySelectorAll('#needs button').forEach(b=>b.onclick=()=>need(b.dataset.need));
+need('baby');
+const sheet=document.getElementById('sheet'),q=document.getElementById('q'),sres=document.getElementById('sres');
+const openS=()=>{sheet.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>q.focus(),50)};
+const closeS=()=>{sheet.classList.remove('open');document.body.style.overflow=''};
+document.getElementById('sbtn').onclick=openS;document.getElementById('mbtn').onclick=openS;
+document.getElementById('sclose').onclick=closeS;
+sheet.onclick=e=>{if(e.target===sheet)closeS()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeS()});
+sheet.querySelectorAll('.mega a').forEach(a=>a.addEventListener('click',()=>{if(a.dataset.need)need(a.dataset.need);closeS()}));
+const norm=t=>t.toLowerCase().replace(/ё/g,'е').replace(/[«»"]/g,'');
+q.oninput=()=>{
+  const v=norm(q.value.trim());
+  if(!v){sres.innerHTML='';return}
+  const r=D.filter(d=>norm(d[0]).includes(v)).slice(0,8);
+  sres.innerHTML=r.length?r.map(d=>`<a href="#"><span>${d[0]}</span><em>${d[1]}</em></a>`).join(''):'<div class="none">Ничего не нашлось — попробуйте «мыло» или «крем»</div>';
+};
+document.getElementById('subf').onsubmit=e=>{e.preventDefault();document.getElementById('subok').style.display='block';e.target.reset()};
 document.getElementById('askf').onsubmit=e=>{e.preventDefault();document.getElementById('ok').style.display='block';e.target.reset()};
 </script>
 </body>
